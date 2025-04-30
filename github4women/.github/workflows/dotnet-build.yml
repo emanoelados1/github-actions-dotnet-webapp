@@ -25,5 +25,5 @@ jobs:
 
     - name: Construir a solução
       run: |
-        echo "Construindo a solução..."
+        echo "Construindo a solução...."
         dotnet build ./SeuProjeto.sln  # Substitua 'SeuProjeto.sln' pelo caminho da sua solução .NET
