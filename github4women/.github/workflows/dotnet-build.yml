@@ -1,0 +1,29 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: dotnet-biuld
+
+on:
+  push:
+    branches: [ "main" ]
+  schedule:
+    - cron: '0 11 * * *'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checar o repositório
+      uses: actions/checkout@v2  # Usando uma action pré-existente para fazer o checkout do código
+
+    - name: Configurar o .NET
+      run: |
+        echo "Instalando o .NET SDK..."
+        curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel 6.0  # Instala o .NET SDK da versão 6.0
+
+    - name: Construir a solução
+      run: |
+        echo "Construindo a solução..."
+        dotnet build ./SeuProjeto.sln  # Substitua 'SeuProjeto.sln' pelo caminho da sua solução .NET
