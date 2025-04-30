@@ -16,4 +16,4 @@ jobs:
 
     steps:
     - name: Checar o repositório
-      uses: actions/checkout@v2  # Usando uma action pré-existente para fazer o checkout do código
+      uses: actions/checkout@v2  # Usando uma action pré-existente para fazer o checkout do código *
